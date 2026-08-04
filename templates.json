@@ -1,0 +1,124 @@
+{
+  "$schema_note": "Manifest for AI agents (e.g. Hermes) generating LinkedIn/IG carousel slides (1080x1080px) from these HTML templates. Fill placeholder tokens via plain string replace, then render each file to PNG (e.g. headless browser, viewport 1080x1080, screenshot the <body> element).",
+  "canvas": { "width": 1080, "height": 1080 },
+  "handle": "@jefry-chiedi",
+  "usage_notes": [
+    "Placeholders use {{TOKEN}} syntax and appear exactly once per token per file — safe for direct string replacement.",
+    "max_chars values are approximate engineering estimates (font-size, line-height, container width) with safety margin, NOT hard limits enforced by the browser.",
+    "Every text container has a bottom fade-mask (mask-image) as a visual overflow guard: text longer than max_chars will fade out at the bottom edge instead of clipping abruptly — treat any visible fade as a signal to shorten the text, not a rendering bug.",
+    "Recommended workflow: generate copy within max_chars, render to PNG, and only escalate to a human if the fade is visibly triggered.",
+    "editorial-classic and tech-grid are the safest defaults for dense/informational tech content (highest char budgets). mystic-minimal, fashion-diagonal and bold-statement have the smallest budgets — best for short, punchy statements."
+  ],
+  "themes": [
+    {
+      "id": "editorial-classic",
+      "label": "Editorial Classic",
+      "best_for": "Neutral, dense informational content; safest general-purpose default",
+      "files": {
+        "cover": { "path": "editorial-classic/01-cover.html", "placeholders": { "TITLE": { "max_chars": 40, "note": "short headline, ~2 lines" } } },
+        "content": { "path": "editorial-classic/02-content.html", "placeholders": { "TITLE": { "max_chars": 40 }, "BODY_1": { "max_chars": 260 }, "BODY_2": { "max_chars": 260 }, "BODY_3": { "max_chars": 260 } } },
+        "content_list": { "path": "editorial-classic/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 40 }, "ITEM_1": { "max_chars": 200 }, "ITEM_2": { "max_chars": 200 }, "ITEM_3": { "max_chars": 200 } } },
+        "closing": { "path": "editorial-classic/03-closing.html", "placeholders": { "TITLE": { "max_chars": 45 }, "SUBTITLE": { "max_chars": 100 } } }
+      }
+    },
+    {
+      "id": "urban-bold",
+      "label": "Urban Bold",
+      "best_for": "Attention-grabbing hook statements, short punchy titles",
+      "files": {
+        "cover": { "path": "urban-bold/01-cover.html", "placeholders": { "TITLE": { "max_chars": 90 } } },
+        "content": { "path": "urban-bold/02-content.html", "placeholders": { "TITLE": { "max_chars": 35 }, "BODY_1": { "max_chars": 180 }, "BODY_2": { "max_chars": 180 }, "BODY_3": { "max_chars": 180 } } },
+        "content_list": { "path": "urban-bold/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 35 }, "ITEM_1": { "max_chars": 150 }, "ITEM_2": { "max_chars": 150 }, "ITEM_3": { "max_chars": 150 } } },
+        "closing": { "path": "urban-bold/03-closing.html", "placeholders": { "TITLE": { "max_chars": 30 }, "SUBTITLE": { "max_chars": 90 } } }
+      }
+    },
+    {
+      "id": "tech-grid",
+      "label": "Tech Grid",
+      "best_for": "Data/tech/business listicles, structured info",
+      "files": {
+        "cover": { "path": "tech-grid/01-cover.html", "placeholders": { "TITLE": { "max_chars": 100 } } },
+        "content": { "path": "tech-grid/02-content.html", "placeholders": { "TITLE": { "max_chars": 35 }, "BODY_1": { "max_chars": 190 }, "BODY_2": { "max_chars": 190 }, "BODY_3": { "max_chars": 190 } } },
+        "content_list": { "path": "tech-grid/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 35 }, "ITEM_1": { "max_chars": 160 }, "ITEM_2": { "max_chars": 160 }, "ITEM_3": { "max_chars": 160 } } },
+        "closing": { "path": "tech-grid/03-closing.html", "placeholders": { "TITLE": { "max_chars": 35 }, "SUBTITLE": { "max_chars": 90 } } }
+      }
+    },
+    {
+      "id": "calm-editorial",
+      "label": "Calm Editorial",
+      "best_for": "Soft skills, mindset, wellness-adjacent professional topics",
+      "files": {
+        "cover": { "path": "calm-editorial/01-cover.html", "placeholders": { "TITLE": { "max_chars": 80 } } },
+        "content": { "path": "calm-editorial/02-content.html", "placeholders": { "TITLE": { "max_chars": 30 }, "BODY_1": { "max_chars": 120 }, "BODY_2": { "max_chars": 120 }, "BODY_3": { "max_chars": 120 } } },
+        "content_list": { "path": "calm-editorial/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 30 }, "ITEM_1": { "max_chars": 100 }, "ITEM_2": { "max_chars": 100 }, "ITEM_3": { "max_chars": 100 } } },
+        "closing": { "path": "calm-editorial/03-closing.html", "placeholders": { "TITLE": { "max_chars": 30 }, "SUBTITLE": { "max_chars": 80 } } }
+      }
+    },
+    {
+      "id": "noir-quote",
+      "label": "Noir Quote",
+      "best_for": "Quotes, executive statements, thought-leadership storytelling",
+      "files": {
+        "cover": { "path": "noir-quote/01-cover.html", "placeholders": { "TITLE": { "max_chars": 110 } } },
+        "content": { "path": "noir-quote/02-content.html", "placeholders": { "TITLE": { "max_chars": 35 }, "BODY_1": { "max_chars": 240 }, "BODY_2": { "max_chars": 240 }, "BODY_3": { "max_chars": 240 } } },
+        "content_list": { "path": "noir-quote/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 35 }, "ITEM_1": { "max_chars": 190 }, "ITEM_2": { "max_chars": 190 }, "ITEM_3": { "max_chars": 190 } } },
+        "closing": { "path": "noir-quote/03-closing.html", "placeholders": { "TITLE": { "max_chars": 40 }, "SUBTITLE": { "max_chars": 90 } } }
+      }
+    },
+    {
+      "id": "botanical",
+      "label": "Botanical",
+      "best_for": "Sustainability, personal growth, culture/people topics",
+      "files": {
+        "cover": { "path": "botanical/01-cover.html", "placeholders": { "TITLE": { "max_chars": 100 } } },
+        "content": { "path": "botanical/02-content.html", "placeholders": { "TITLE": { "max_chars": 35 }, "BODY_1": { "max_chars": 180 }, "BODY_2": { "max_chars": 180 }, "BODY_3": { "max_chars": 180 } } },
+        "content_list": { "path": "botanical/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 35 }, "ITEM_1": { "max_chars": 150 }, "ITEM_2": { "max_chars": 150 }, "ITEM_3": { "max_chars": 150 } } },
+        "closing": { "path": "botanical/03-closing.html", "placeholders": { "TITLE": { "max_chars": 40 }, "SUBTITLE": { "max_chars": 90 } } }
+      }
+    },
+    {
+      "id": "mystic-minimal",
+      "label": "Mystic Minimal",
+      "best_for": "Very short, elegant one-line insights only — lowest text capacity of all themes",
+      "files": {
+        "cover": { "path": "mystic-minimal/01-cover.html", "placeholders": { "TITLE": { "max_chars": 50 } } },
+        "content": { "path": "mystic-minimal/02-content.html", "placeholders": { "TITLE": { "max_chars": 25 }, "BODY_1": { "max_chars": 100 }, "BODY_2": { "max_chars": 100 }, "BODY_3": { "max_chars": 100 } } },
+        "content_list": { "path": "mystic-minimal/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 25 }, "ITEM_1": { "max_chars": 90 }, "ITEM_2": { "max_chars": 90 }, "ITEM_3": { "max_chars": 90 } } },
+        "closing": { "path": "mystic-minimal/03-closing.html", "placeholders": { "TITLE": { "max_chars": 25 }, "SUBTITLE": { "max_chars": 60 } } }
+      }
+    },
+    {
+      "id": "bold-statement",
+      "label": "Bold Statement",
+      "best_for": "One strong headline per slide only — not for dense/multi-point content",
+      "files": {
+        "cover": { "path": "bold-statement/01-cover.html", "placeholders": { "TITLE": { "max_chars": 45 } } },
+        "content": { "path": "bold-statement/02-content.html", "placeholders": { "TITLE": { "max_chars": 25 }, "BODY_1": { "max_chars": 150 }, "BODY_2": { "max_chars": 150 }, "BODY_3": { "max_chars": 150 } } },
+        "content_list": { "path": "bold-statement/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 25 }, "ITEM_1": { "max_chars": 120 }, "ITEM_2": { "max_chars": 120 }, "ITEM_3": { "max_chars": 120 } } },
+        "closing": { "path": "bold-statement/03-closing.html", "placeholders": { "TITLE": { "max_chars": 30 }, "SUBTITLE": { "max_chars": 80 } } }
+      }
+    },
+    {
+      "id": "retro-archive",
+      "label": "Retro Archive",
+      "best_for": "Research findings, reports, \"did you know\" / documented-fact content",
+      "files": {
+        "cover": { "path": "retro-archive/01-cover.html", "placeholders": { "TITLE": { "max_chars": 100 } } },
+        "content": { "path": "retro-archive/02-content.html", "placeholders": { "TITLE": { "max_chars": 35 }, "BODY_1": { "max_chars": 190 }, "BODY_2": { "max_chars": 190 }, "BODY_3": { "max_chars": 190 } } },
+        "content_list": { "path": "retro-archive/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 35 }, "ITEM_1": { "max_chars": 160 }, "ITEM_2": { "max_chars": 160 }, "ITEM_3": { "max_chars": 160 } } },
+        "closing": { "path": "retro-archive/03-closing.html", "placeholders": { "TITLE": { "max_chars": 40 }, "SUBTITLE": { "max_chars": 90 } } }
+      }
+    },
+    {
+      "id": "fashion-diagonal",
+      "label": "Fashion Diagonal",
+      "best_for": "Personal branding, career topics, editorial-style single insights",
+      "files": {
+        "cover": { "path": "fashion-diagonal/01-cover.html", "placeholders": { "TITLE": { "max_chars": 75 } } },
+        "content": { "path": "fashion-diagonal/02-content.html", "placeholders": { "TITLE": { "max_chars": 30 }, "BODY_1": { "max_chars": 190 }, "BODY_2": { "max_chars": 190 }, "BODY_3": { "max_chars": 190 } } },
+        "content_list": { "path": "fashion-diagonal/02-content-list.html", "placeholders": { "TITLE": { "max_chars": 30 }, "ITEM_1": { "max_chars": 160 }, "ITEM_2": { "max_chars": 160 }, "ITEM_3": { "max_chars": 160 } } },
+        "closing": { "path": "fashion-diagonal/03-closing.html", "placeholders": { "TITLE": { "max_chars": 35 }, "SUBTITLE": { "max_chars": 85 } } }
+      }
+    }
+  ]
+}
