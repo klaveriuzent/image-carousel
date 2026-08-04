@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Segoe+UI&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botanical — 02</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background-color: #20362A;
+    color: #8CAE8E;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    position: relative;
+  }
+  .frame {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+    border: 1px solid #8CAE8E;
+    border-radius: 60px;
+    opacity: 0.5;
+  }
+  .leaf-accent {
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #C48373;
+    border-radius: 0 60% 60% 60%;
+    transform: rotate(-20deg);
+  }
+  .page-number {
+    position: absolute;
+    top: 140px;
+    left: 210px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 56px;
+    color: #8CAE8E;
+  }
+  h1 {
+    position: absolute;
+    top: 280px;
+    left: 130px;
+    right: 130px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 52px;
+    color: #8CAE8E;
+  }
+  .body-copy {
+    position: absolute;
+    top: 380px;
+    left: 130px;
+    right: 130px;
+    bottom: 220px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+      -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  }
+  .body-copy p {
+    font-size: 24px;
+    line-height: 1.75;
+    color: #8CAE8E;
+    opacity: 0.9;
+  }
+  .footer {
+    position: absolute;
+    bottom: 100px;
+    left: 130px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer svg { width: 34px; height: 34px; }
+  .footer span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: #8CAE8E;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="leaf-accent"></div>
+  <div class="page-number">02</div>
+  <h1>Lorem Ipsum Dolor</h1>
+  <div class="body-copy">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="footer">
+    <svg viewBox="0 0 24 24" fill="#C48373" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+    <span>@jefry-chiedi</span>
+  </div>
+</body>
+</html>

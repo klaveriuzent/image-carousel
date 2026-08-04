@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Segoe+UI&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mystic Minimal — 02</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background-color: #332B47;
+    color: #A48FC0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    position: relative;
+  }
+  .ring {
+    position: absolute;
+    top: 100px;
+    left: 490px;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #A48FC0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #C4A0BE;
+  }
+  h1 {
+    position: absolute;
+    top: 250px;
+    left: 130px;
+    right: 130px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 52px;
+    color: #A48FC0;
+  }
+  .body-copy {
+    position: absolute;
+    top: 380px;
+    left: 200px;
+    right: 200px;
+    bottom: 220px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+      -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  }
+  .body-copy p {
+    font-size: 23px;
+    line-height: 1.85;
+    color: #A48FC0;
+    opacity: 0.9;
+    font-weight: 300;
+  }
+  .footer {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .footer svg { width: 30px; height: 30px; }
+  .footer span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: #A48FC0;
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+  <div class="ring">02</div>
+  <h1>Lorem Ipsum Dolor</h1>
+  <div class="body-copy">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="footer">
+    <svg viewBox="0 0 24 24" fill="#C4A0BE" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+    <span>@jefry-chiedi</span>
+  </div>
+</body>
+</html>
